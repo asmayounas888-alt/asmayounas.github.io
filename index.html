@@ -3,597 +3,623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Aasma Younas - Computational Linguistics & NLP Researcher specializing in media sentiment analysis and corpus linguistics">
+    <meta name="keywords" content="computational linguistics, NLP, sentiment analysis, corpus linguistics, data science">
+    <title>Aasma Younas - Computational Linguistics & NLP Researcher</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background: #f8f9fa;
         }
-
-        /* Header & Navigation */
+        
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+        
+        header .tagline {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
         nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+            background: #f0f4ff;
+        }
+        
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 150px 2rem 100px;
-            margin-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Sections */
+        
         section {
-            padding: 80px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 3rem 0;
+            border-bottom: 1px solid #e0e0e0;
         }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #333;
+        
+        section:last-child {
+            border-bottom: none;
         }
-
-        /* About */
-        .about {
-            background: white;
-            text-align: center;
+        
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #667eea;
+            border-left: 4px solid #764ba2;
+            padding-left: 1rem;
         }
-
-        .about-container {
+        
+        /* About Section */
+        .about-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
         }
-
-        .about-image {
-            text-align: center;
+        
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
         }
-
-        .profile-pic {
-            width: 200px;
-            height: 250px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            user-select: none;
-            pointer-events: none;
-            -webkit-user-drag: none;
-            -webkit-touch-callout: none;
-        }
-
-        .about-text {
-            text-align: left;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+        
+        .about-text p {
+            margin-bottom: 1rem;
             line-height: 1.8;
+            color: #555;
         }
-
-        /* Skills */
-        .skills-container {
+        
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        /* Skills Section */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-
-        .skill-box {
-            background: #f9f9f9;
+        
+        .skill-card {
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+            transition: all 0.3s ease;
         }
-
-        .skill-box h3 {
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .skill-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
-
-        /* Research */
-        .research {
-            background: #f8f9ff;
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
-
-        .research-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        
+        .tag {
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e0e8ff;
         }
-
-        .research-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .research-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
-        }
-
-        .research-item h3 {
-            color: #333;
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .research-item p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Projects */
+        
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
-
+        
         .project-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
-
+        
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.2);
         }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        
+        .project-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
         }
-
-        .project-card-content {
-            padding: 1.5rem;
-        }
-
-        .project-card h3 {
+        
+        .project-header h3 {
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: #333;
         }
-
-        .project-card p {
-            color: #666;
+        
+        .project-header .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-body {
+            padding: 2rem;
+        }
+        
+        .project-body p {
+            color: #555;
             margin-bottom: 1rem;
-            font-size: 0.95rem;
+            line-height: 1.6;
         }
-
-        .project-links {
+        
+        .project-meta {
             display: flex;
             gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
         }
-
-        .project-links a {
+        
+        .project-tech {
+            font-size: 0.8rem;
+            background: #f0f4ff;
             color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
         }
-
-        .project-links a:hover {
-            color: #764ba2;
-        }
-
-        /* Contact */
-        .contact {
+        
+        /* Publications Section */
+        .pub-item {
             background: white;
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
+            padding: 2rem;
             margin-bottom: 1.5rem;
-            text-align: left;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+        
+        .pub-item:hover {
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+        
+        .pub-item h3 {
             color: #333;
+            margin-bottom: 0.5rem;
         }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
+        
+        .pub-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        
+        .pub-description {
+            color: #555;
+            line-height: 1.6;
         }
-
-        .submit-btn {
+        
+        /* Contact Section */
+        .contact-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s;
-            width: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
-
-        /* Footer */
+        
+        .contact-btn.secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .contact-btn.secondary:hover {
+            background: #f0f4ff;
+        }
+        
         footer {
             background: #333;
-            color: white;
+            color: #fff;
             text-align: center;
             padding: 2rem;
             margin-top: 2rem;
         }
-
-        .social-links {
-            margin: 1rem 0;
-        }
-
-        .social-links a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #667eea;
-        }
-
+        
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .about-text {
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            h2 {
+            header h1 {
                 font-size: 2rem;
             }
-
-            section {
-                padding: 60px 1rem;
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav a {
+                border-bottom: none;
+                border-left: 3px solid transparent;
+                padding-left: 2rem;
+            }
+            
+            nav a:hover {
+                border-left-color: #764ba2;
+                background: #f0f4ff;
+            }
+            
+            section h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Aasma Younas</h1>
+        <div class="subtitle">Computational Linguist & NLP Researcher</div>
+        <div class="tagline">Uncovering linguistic insights from text through computational methods, corpus analysis, and deep learning</div>
     </header>
-
-    <section id="home" class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Innovative researcher and developer specializing in computational linguistics, NLP, and data analysis.</p>
-        <a href="#projects" class="cta-button">View My Work</a>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <div class="about-image">
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwFAwMDAwMEAwMDAwMDEQMDAwsEBwkGBQUJBwcHBwcICAgICAcICAgICAgICAj/2wBDAQICAgICAwUDAwwKCAcIDAgICAgICAgICAcICAcICAgICAgICAcICAgICAgICAgICAgICAgICAgICAgICAgICAj/wAARCAAPAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbW2Nna4uPk5ebn6Onq8vP09fb2+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbW2Nna4uPk5ebn6Onq8vP09fb2+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="Asma Younas - Profile Picture" class="profile-pic">
-            </div>
-            <div class="about-text">
-                <p>I'm passionate about computational linguistics, natural language processing, and media sentiment analysis. With expertise in corpus compilation, framing analysis, and sentiment detection, I work at the intersection of technology and linguistic research to uncover insights from textual data.</p>
-                <p>My research focuses on comparative media analysis across Western and non-Western news sources, examining how language shapes discourse and perception.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2>Skills & Expertise</h2>
-        <div class="skills-container">
-            <div class="skill-box">
-                <h3>Computational Linguistics</h3>
-                <p>NLP techniques, corpus analysis, text mining, sentiment analysis</p>
-            </div>
-            <div class="skill-box">
-                <h3>Data Analysis</h3>
-                <p>Python, statistical analysis, data visualization, machine learning</p>
-            </div>
-            <div class="skill-box">
-                <h3>Research Methods</h3>
-                <p>Framing analysis, media studies, comparative discourse analysis</p>
-            </div>
-            <div class="skill-box">
-                <h3>Tools & Technologies</h3>
-                <p>Python, pandas, scikit-learn, BERT embeddings, network analysis, visualization tools</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="research" class="research">
-        <h2>Research Interests</h2>
-        <div class="research-container">
-            <div class="research-item">
-                <h3>📊 Data-Driven Computational Analysis</h3>
-                <p>Learner Language using Large Corpora - Analyzing linguistic patterns in learner speech and writing through computational methods applied to extensive corpus data.</p>
-            </div>
-            <div class="research-item">
-                <h3>🔗 Syntax–Semantics Correspondence</h3>
-                <p>Computational Modeling of how syntactic structures map to semantic meanings, exploring the relationship between form and function in language.</p>
-            </div>
-            <div class="research-item">
-                <h3>🌐 Syntactic Networks from Corpora</h3>
-                <p>Built syntactic networks from corpora to visualize and analyze linguistic structure relationships, enabling discovery of patterns in language organization.</p>
-            </div>
-            <div class="research-item">
-                <h3>🧠 BERT Embeddings & Semantic Similarity</h3>
-                <p>Applied BERT embeddings to model semantic similarity between linguistic units, leveraging transformer-based deep learning for advanced NLP tasks.</p>
-            </div>
-            <div class="research-item">
-                <h3>📈 Linguistic Visualization & Clustering</h3>
-                <p>Visualized linguistic categories using clustering algorithms and network graphs, creating interpretable representations of complex linguistic phenomena.</p>
-            </div>
-            <div class="research-item">
-                <h3>🌍 Digitalization of Indigenous Languages</h3>
-                <p>Punjabi and Saraiki Language - Developing computational resources and digital tools to preserve, document, and promote endangered indigenous languages through corpus creation and NLP applications.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%23667eea' width='400' height='200'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ECorpus Analysis%3C/text%3E%3C/svg%3E" alt="Corpus Analysis">
-                <div class="project-card-content">
-                    <h3>Comparative Media Corpus</h3>
-                    <p>Comprehensive analysis of Western and non-Western news coverage (2020-2025), examining framing, sentiment, and linguistic patterns.</p>
-                    <div class="project-links">
-                        <a href="#">Learn More</a>
-                        <a href="#">Details</a>
-                    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Passionate about Language & Data</h3>
+                    <p>
+                        I'm a computational linguist specializing in natural language processing, sentiment analysis, and corpus linguistics. 
+                        My work focuses on uncovering language patterns and discourse dynamics across media sources.
+                    </p>
+                    <p>
+                        With expertise in corpus compilation, framing analysis, and sentiment detection, I apply computational methods 
+                        to linguistic research. I'm particularly interested in comparative media analysis and how language shapes perception 
+                        across Western and non-Western news sources.
+                    </p>
+                    <p>
+                        My research combines linguistic theory with advanced NLP techniques including transformer models (BERT), 
+                        semantic similarity analysis, and network visualization to extract meaningful insights from large textual datasets.
+                    </p>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%23764ba2' width='400' height='200'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ESentiment Analysis%3C/text%3E%3C/svg%3E" alt="Sentiment Analysis">
-                <div class="project-card-content">
-                    <h3>Sentiment & Framing Detection</h3>
-                    <p>Automated sentiment classification and framing lexeme identification in news articles using NLP and machine learning techniques.</p>
-                    <div class="project-links">
-                        <a href="#">Learn More</a>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%234a5f9f' width='400' height='200'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EData Visualization%3C/text%3E%3C/svg%3E" alt="Data Visualization">
-                <div class="project-card-content">
-                    <h3>Interactive Dashboards</h3>
-                    <p>Real-time visualization of sentiment trends, framing patterns, and corpus statistics across multiple news sources and time periods.</p>
-                    <div class="project-links">
-                        <a href="#">Learn More</a>
-                        <a href="#">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <p>Interested in collaboration or discussing research? Feel free to reach out.</p>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#" title="LinkedIn">LinkedIn</a>
-            <a href="#" title="GitHub">GitHub</a>
-            <a href="#" title="Email">Email</a>
-        </div>
-        <p>Made with passion for research and technology.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-
-        // Protect profile image from copying
-        const profilePic = document.querySelector('.profile-pic');
+        </section>
         
-        // Disable right-click on image
-        profilePic.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        // Disable drag
-        profilePic.addEventListener('dragstart', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        // Disable select/copy
-        profilePic.addEventListener('selectstart', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        // Prevent keyboard copy
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C')) {
-                if (document.activeElement === profilePic || profilePic.contains(document.activeElement)) {
-                    e.preventDefault();
-                    return false;
-                }
-            }
-        });
-    </script>
+        <!-- Expertise Section -->
+        <section id="expertise">
+            <h2>Core Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>📊 Corpus Linguistics</h3>
+                    <p>Large-scale corpus compilation, annotation, and computational analysis of linguistic phenomena in real-world text data.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Corpus Design</span>
+                        <span class="tag">Annotation</span>
+                        <span class="tag">Quantitative Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>🔍 Sentiment & Framing Analysis</h3>
+                    <p>Detection and analysis of sentiment patterns and media framing across multiple news sources and languages.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Sentiment Classification</span>
+                        <span class="tag">Framing Theory</span>
+                        <span class="tag">Media Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>🧠 Deep Learning & Embeddings</h3>
+                    <p>BERT embeddings, semantic similarity, and transformer-based models for semantic analysis and representation learning.</p>
+                    <div class="skill-tags">
+                        <span class="tag">BERT</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">Embeddings</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>💻 Programming & Tools</h3>
+                    <p>Python, NLP libraries, data visualization, and computational text analysis toolkits for research automation.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLTK/spaCy</span>
+                        <span class="tag">Visualization</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>🌐 Network & Syntax Analysis</h3>
+                    <p>Building syntactic networks from corpora and visualizing linguistic structure relationships through graph analysis.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Network Analysis</span>
+                        <span class="tag">Syntax Modeling</span>
+                        <span class="tag">Visualization</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>📈 Data Analysis & Statistics</h3>
+                    <p>Statistical analysis of learner language, linguistic patterns, and comparative corpus analysis across domains.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Statistics</span>
+                        <span class="tag">Learner Analysis</span>
+                        <span class="tag">Comparative Study</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="emoji">🗞️</div>
+                        <h3>Comparative Media Sentiment Analysis</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Comprehensive analysis of sentiment patterns across Western and non-Western news sources (BBC, Al-Jazeera, CNN, Dawn) with focus on media framing and discourse patterns.</p>
+                        <div class="project-meta">
+                            <span class="project-tech">Corpus: 5000+ articles</span>
+                            <span class="project-tech">Multi-source Analysis</span>
+                            <span class="project-tech">Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="emoji">💾</div>
+                        <h3>Large-Scale Corpus Compilation</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed comprehensive corpora with entity recognition, semantic chunking, and word-level analysis. Processed and annotated datasets for computational analysis.</p>
+                        <div class="project-meta">
+                            <span class="project-tech">Entity Recognition</span>
+                            <span class="project-tech">Chunking</span>
+                            <span class="project-tech">Annotation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="emoji">🧠</div>
+                        <h3>BERT Semantic Analysis Pipeline</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Implemented transformer-based semantic similarity and clustering analysis using BERT embeddings for linguistic phenomena classification and interpretation.</p>
+                        <div class="project-meta">
+                            <span class="project-tech">BERT Embeddings</span>
+                            <span class="project-tech">Clustering</span>
+                            <span class="project-tech">Transformers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="emoji">🔗</div>
+                        <h3>Syntactic Network Modeling</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Constructed and visualized syntactic networks from corpora to explore how syntactic structures map to semantic meanings through graph-based analysis.</p>
+                        <div class="project-meta">
+                            <span class="project-tech">Graph Analysis</span>
+                            <span class="project-tech">Syntax Modeling</span>
+                            <span class="project-tech">Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="emoji">👥</div>
+                        <h3>Learner Language Analysis</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Data-driven computational analysis of learner speech and writing patterns through large-scale corpus methods and statistical analysis.</p>
+                        <div class="project-meta">
+                            <span class="project-tech">Learner Corpora</span>
+                            <span class="project-tech">Statistics</span>
+                            <span class="project-tech">Patterns</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="emoji">📊</div>
+                        <h3>Linguistic Visualization & Clustering</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Creating interpretable visualizations and clustering representations of complex linguistic phenomena for research communication and analysis.</p>
+                        <div class="project-meta">
+                            <span class="project-tech">Visualization</span>
+                            <span class="project-tech">Clustering</span>
+                            <span class="project-tech">Interpretation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Research Interests</h2>
+            <div class="pub-item">
+                <h3>📌 Comparative Media Discourse Analysis</h3>
+                <div class="pub-meta">Focus: Cross-cultural linguistic patterns in news coverage</div>
+                <p class="pub-description">
+                    Examining how language shapes discourse and perception across Western and non-Western news sources. 
+                    Analyzing framing patterns in media coverage of global events with computational methods.
+                </p>
+            </div>
+            
+            <div class="pub-item">
+                <h3>📌 Corpus-based Computational Linguistics</h3>
+                <div class="pub-meta">Focus: Large-scale textual data analysis and pattern discovery</div>
+                <p class="pub-description">
+                    Developing and analyzing large corpora for linguistic pattern discovery. Creating datasets for 
+                    computational analysis with annotation and entity recognition.
+                </p>
+            </div>
+            
+            <div class="pub-item">
+                <h3>📌 Semantic Analysis with Deep Learning</h3>
+                <div class="pub-meta">Focus: Transformer models and semantic similarity</div>
+                <p class="pub-description">
+                    Leveraging BERT and other transformer-based models for semantic analysis. Exploring how deep learning 
+                    can improve our understanding of linguistic meaning and relationships.
+                </p>
+            </div>
+            
+            <div class="pub-item">
+                <h3>📌 Syntax-Semantics Correspondence</h3>
+                <div class="pub-meta">Focus: Structure-meaning mapping through computational modeling</div>
+                <p class="pub-description">
+                    Modeling how syntactic structures map to semantic meanings. Building network representations and 
+                    analyzing structural patterns in language.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always interested in discussing computational linguistics, NLP projects, and research opportunities. 
+                   Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:asmayounas888@gmail.com" class="contact-btn">📧 Email</a>
+                    <a href="https://github.com/asmayounas" class="contact-btn secondary">💻 GitHub</a>
+                    <a href="https://linkedin.com/in/aasma-younas" class="contact-btn secondary">🔗 LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Aasma Younas. All rights reserved. | Computational Linguist & NLP Researcher</p>
+    </footer>
 </body>
 </html>
